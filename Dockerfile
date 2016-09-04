@@ -10,7 +10,7 @@ RUN apk add --update \
   && pip install --upgrade pip \
   && pip install virtualenv \
   && pip install virtualenvwrapper \
-  && rm /var/cache/apk/*
+  && rm /var/cache/apk/* \
   && rm -r /root/.cache
 
 # tune npm and install Gulp
