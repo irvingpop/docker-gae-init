@@ -15,6 +15,7 @@ RUN apk add --update \
 
 # tune npm and install Gulp
 RUN echo 'unsafe-perm = true' >> /root/.npmrc \
+  && echo '{ "allow_root": true }' > /root/.bowerrc \
   && npm install -g gulp
 
 # create app directory
