@@ -4,7 +4,6 @@ MAINTAINER Serg Baburin <dev@babur.in>
 # prepare requirements
 RUN apk add --update \
   git \
-  nodejs \
   py-pip \
   && update-ca-certificates \
   && pip install --upgrade pip \
