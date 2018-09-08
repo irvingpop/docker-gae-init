@@ -1,9 +1,10 @@
-FROM gmist/gcloud-app-engine-python:v214.0.0
-MAINTAINER Serg Baburin <dev@babur.in>
+FROM irvingpop/gcloud-app-engine-python:latest
 
 # prepare requirements
 RUN apk add --update \
   git \
+  bash \
+  tini \
   py-pip \
   && update-ca-certificates \
   && pip install --upgrade pip \
@@ -20,3 +21,10 @@ RUN echo 'unsafe-perm = true' >> /root/.npmrc \
 # create app directory
 RUN mkdir /var/app
 WORKDIR /var/app
+
+EXPOSE 8080
+EXPOSE 8081
+EXPOSE 3000
+EXPOSE 3001
+
+ENTRYPOINT ["/sbin/tini", "--"]
