@@ -8,8 +8,7 @@ RUN apk add --update \
   py-pip \
   && update-ca-certificates \
   && pip install --upgrade pip \
-  && pip install virtualenv \
-  && pip install virtualenvwrapper \
+  && pip install virtualenv virtualenvwrapper pipenv \
   && rm /var/cache/apk/* \
   && rm -r /root/.cache
 
